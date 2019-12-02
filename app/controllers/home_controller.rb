@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @hide_page_banner = true
   end
 
   def terms
