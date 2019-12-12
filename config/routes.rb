@@ -14,20 +14,20 @@ Rails.application.routes.draw do
   get '/portfolio', to: 'home#portfolio'
   get '/contact', to: 'home#contact'
   get '/about', to: 'home#about'
-  get '/services', to: 'home#services'
-  get '/service_detail', to: 'home#service_detail'
-  get '/website_development', to: 'home#website_development'
-  get '/graphic_design', to: 'home#graphic_design'
-  get '/digital_marketing', to: 'home#digital_marketing'
-  get '/seo_content_writing', to: 'home#seo_content_writing'
-  get '/app_development', to: 'home#app_development'
   get '/blog', to: 'home#blog'
+  get '/services/website_development'
+  get 'services/graphic_design'
+  get 'services/digital_marketing'
+  get 'services/seo_and_content_marketing'
+  get 'services/app_development'
+
   
     authenticate :user, lambda { |u| u.admin? } do
       mount Sidekiq::Web => '/sidekiq'
     end
 
 
+  resources :services, only: [:index]
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
