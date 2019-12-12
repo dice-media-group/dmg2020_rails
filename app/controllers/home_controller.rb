@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @page_banner = 'banners/about'   
   end
 
   def terms
