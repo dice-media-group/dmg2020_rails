@@ -3,6 +3,10 @@ class HomeController < ApplicationController
     @hide_page_banner = true
   end
 
+  def about
+    @hide_page_banner = true
+  end
+
   def terms
   end
 
