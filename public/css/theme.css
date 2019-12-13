@@ -86,6 +86,7 @@ License URI:
     line-height: .8;
     text-transform: uppercase;
     position: relative;
+    text-shadow: 0 0 2px #000,0 0 4px #000;
 }
 .mainmenu ul li a:after{
     position: absolute;
@@ -171,6 +172,7 @@ License URI:
     line-height: .8;
     font-size: 25px;
     margin: 0;
+    text-shadow: 0 0 2px #000,0 0 4px #000;
 }
 .navigator a.search {
     margin-right: 16px;
@@ -1804,7 +1806,7 @@ License URI:
 .pageBanner {
     position: relative;
     min-height: 465px;
-    background: url(../images/bg/8.jpg) no-repeat center center / cover;
+    background: url(/images/seo_and_content_marketing@0_5x-100.jpg) no-repeat center center / cover;
     padding-top: 224px;
 }
 .banner_content{
@@ -1817,6 +1819,7 @@ License URI:
     letter-spacing: 1.8px;
     text-transform: uppercase;
     margin: 0 0 12px;
+    text-shadow: 0 0 2px #000,0 0 4px #000;
 }
 .banner_content h4 a{
     color: #fff;
@@ -1833,6 +1836,7 @@ License URI:
     margin: 0;
     color: #FFF;
     text-transform: uppercase;
+    text-shadow: 0 0 2px #000,0 0 4px #000;
 }
 .agency_img1{
     position: relative;
