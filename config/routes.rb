@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :source_code_contributors
+  resources :source_code_credits
   namespace :admin do
     resources :users
     resources :announcements

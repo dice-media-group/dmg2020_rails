@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to source_code_contributors_path, class: 'btn btn-default' do %>
+    All Source_code_contributors
+  <% end %>
+  <%= link_to edit_source_code_contributor_path(@source_code_contributor), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show source_code_contributor</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>First name:</dt>
+  <dd><%= @source_code_contributor.first_name %></dd>
+
+  <dt>Last name:</dt>
+  <dd><%= @source_code_contributor.last_name %></dd>
+
+</dl>
