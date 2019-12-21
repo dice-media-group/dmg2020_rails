@@ -5,11 +5,11 @@ one:
   last_name: MyString
   email: MyString
   phone_number: MyString
-  body: MyString
+  body: MyText
 
 two:
   first_name: MyString
   last_name: MyString
   email: MyString
   phone_number: MyString
-  body: MyString
+  body: MyText

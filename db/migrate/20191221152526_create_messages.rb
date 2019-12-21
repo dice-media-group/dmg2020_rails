@@ -5,7 +5,7 @@ class CreateMessages < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.string :email
       t.string :phone_number
-      t.string :body
+      t.text :body
 
       t.timestamps
     end

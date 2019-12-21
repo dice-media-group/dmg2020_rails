@@ -3,6 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   resources :messages
   namespace :admin do
+    resources :messages
     resources :users
     resources :announcements
     resources :notifications
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
   get '/portfolio', to: 'home#portfolio'
-  get '/contact', to: 'home#contact'
+  get '/contact', to: 'messages#new'
   get '/about', to: 'home#about'
   get '/blog', to: 'home#blog'
   get '/services/website_development'
