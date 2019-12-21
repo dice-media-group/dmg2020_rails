@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_223652) do
+ActiveRecord::Schema.define(version: 2019_12_02_005727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,31 +60,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_223652) do
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 
-  create_table "source_code_contributions", force: :cascade do |t|
-    t.bigint "source_code_contributor_id", null: false
-    t.bigint "source_code_credit_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["source_code_contributor_id"], name: "index_source_code_contributions_on_source_code_contributor_id"
-    t.index ["source_code_credit_id"], name: "index_source_code_contributions_on_source_code_credit_id"
-  end
-
-  create_table "source_code_contributors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "source_code_credits", force: :cascade do |t|
-    t.string "name_of_work"
-    t.text "url"
-    t.string "license_kind"
-    t.text "license_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -102,6 +77,4 @@ ActiveRecord::Schema.define(version: 2019_12_20_223652) do
   end
 
   add_foreign_key "services", "users"
-  add_foreign_key "source_code_contributions", "source_code_contributors"
-  add_foreign_key "source_code_contributions", "source_code_credits"
 end
