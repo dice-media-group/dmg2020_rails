@@ -5,7 +5,6 @@
   </head>
 
   <body>
-    <%#= render 'shared/navbar' %>
     <%#= render 'shared/preloading' %>
     <%= render 'shared/header01' %>
     <%= render 'shared/search_form' %>
@@ -23,6 +22,10 @@
     </div>
 
     <%= render 'shared/footer' %>
+        <% if current_user %>
+      <%= render 'shared/navbar' %>      
+    <% end %>
+
     <%= render 'shared/footer_section' %>
     <%= render 'shared/javascripts' %>
   </body>
