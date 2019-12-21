@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%#= render 'shared/head' %>
+    <%= render 'shared/head' %>
   </head>
 
   <body>
     <%#= render 'shared/navbar' %>
     <%#= render 'shared/preloading' %>
-    <%#= render 'shared/header01' %>
-    <%#= render 'shared/search_form' %>
-    <%#= render 'shared/popup_menu' %>
+    <%= render 'shared/header01' %>
+    <%= render 'shared/search_form' %>
+    <%= render 'shared/popup_menu' %>
 
     <%if @page_banner.to_s.length > 0 %>
-      <%#= render :partial => @page_banner.to_s  %>
+      <%= render :partial => @page_banner.to_s  %>
       <%#= render :partial => @page_banner.to_s  %>
     <%else%>
-      <%#= render :partial => "shared/page_banner"  %>
+      <%= render :partial => "shared/page_banner"  %>
     <% end %>
 
     <div id="container">
-      <%#= yield %>
+      <%= yield %>
     </div>
 
-    <%#= render 'shared/footer' %>
-    <%#= render 'shared/footer_section' %>
-    <%#= render 'shared/javascripts' %>
+    <%= render 'shared/footer' %>
+    <%= render 'shared/footer_section' %>
+    <%= render 'shared/javascripts' %>
   </body>
 </html>
