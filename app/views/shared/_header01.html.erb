@@ -4,49 +4,52 @@
         <div class="row">
             <div class="col-lg-2 col-sm-3 col-md-3">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt=""/></a>
+                    <a href="/">
+                        <%= render 'shared/website_logo.html.erb' %>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-8 col-sm-7 col-md-7">
                 <nav class="mainmenu text-center">
                     <ul>
                         <li class="menu-item-has-children">
-                            <a href="#">home</a>
+                            <a href="/">home</a>
+                        </li>
+                        <li><a href="/about">About</a></li>
+                        <li class="menu-item-has-children"><a href="/services">Services</a>
                             <ul class="sub-menu">
-                                <li><a href="index.html">Home 01</a></li>
-                                <li><a href="index2.html">Home 02</a></li>
-                                <li><a href="index3.html">Home 03</a></li>
+                                <li><a href="/services/website_development">Website Development</a></li>
+                                <li><a href="/services/graphic_design">Graphic Design</a></li>
+                                <li><a href="/services/digital_marketing">Digital Marketing</a></li>
+                                <li><a href="/services/seo_and_content_marketing">SEO & Content Writing</a></li>
+                                <li><a href="/services/app_development">App Development</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="menu-item-has-children"><a href="#">Services</a>
+<!--                        <li class="menu-item-has-children"><a href="/portfolio">Portfolio</a>
                             <ul class="sub-menu">
-                                <li><a href="services.html">Service</a></li>
-                                <li><a href="service_detail.html">Service Detail</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children"><a href="#">Portfolio</a>
-                            <ul class="sub-menu">
-                                <li><a href="portfolio.html">Portfolio v1</a></li>
+                                <li><a href="/portfolio">Portfolio v1</a></li>
                                 <li><a href="portfolio2.html">Portfolio v2</a></li>
                                 <li><a href="portfolio_detail.html">Portfolio Detail</a></li>
                             </ul>
+                            
                         </li>
-                        <li class="menu-item-has-children"><a href="#">Blog</a>
+                        -->
+<!--                        <li class="menu-item-has-children"><a href="#">Blog</a>
                             <ul class="sub-menu">
-                                <li><a href="blog.html">Blog v1</a></li>
+                                <li><a href="/blog">Blog v1</a></li>
                                 <li><a href="blog2.html">Blog v2</a></li>
                                 <li><a href="blog3.html">Blog v3</a></li>
                                 <li><a href="blog_single.html">Blog Single</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+-->
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-2 col-sm-2 col-md-2">
                 <div class="navigator text-right">
-                    <a class="search searchToggler" href="javascript:void(0);"><i class="mei-magnifying-glass"></i></a>
+                    <!-- <a class="search searchToggler" href="javascript:void(0);"><i class="mei-magnifying-glass"></i></a> -->
                     <a href="javascript:void(0);" class="menu mobilemenu hidden-sm hidden-md hidden-lg hidden-xs"><i class="mei-menu"></i></a>
                     <a id="open-overlay-nav" class="menu hamburger" href="javascript:void(0);"><i class="mei-menu"></i></a>
                 </div>
