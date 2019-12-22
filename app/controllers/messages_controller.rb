@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        m = NotificationMailer.welcome.deliver_now
+        @message.send_message_to_rep
         format.html { redirect_to "/", notice: 'It\'s great to hear from you.  We will get back to you soon.' }
         format.json { render :show, status: :created, location: @message }
       else
