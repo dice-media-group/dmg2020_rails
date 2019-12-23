@@ -1,3 +1,6 @@
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-md-10 col-md-offset-1">
+
 <%= form_with(model: message, local: true) do |form| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
@@ -10,30 +13,33 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
 
-  <div class="form-group">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, class: 'input-form required', placeholder:"First Name" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, class: 'input-form required' %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: 'input-form required', placeholder:"Email Address" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= form.label :phone_number %>
+      <%= form.text_field :phone_number, class: 'input-form required',  placeholder:"Phone Number" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :body %>
-    <%= form.text_area :body, class: 'form-control' %>
+    <div class="form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'input-form required', placeholder:"Write Message" %>
+    </div>
+
   </div>
 
   <div class="form-group">
@@ -43,7 +49,7 @@
       </div>
     <% end %>
 
-    <%= form.submit class: 'btn btn-primary' %>
+    <%= form.submit class: 'btn btn-primary', value:  "Send Message" %>
 
     <% if message.persisted? %>
       <%= link_to "Cancel", message, class: "btn btn-link" %>
