@@ -12,17 +12,15 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-md-10 col-md-offset-1">
                         <%# <form action="#" method="post" class="contactFrom" id="contactForm"> %>
-                        <%= form_with(model: @message, remote: true, html: { class: "contactFrom",    id: "contactForm"}) do |form| %>
+                        <%= form_with model: @message,  html: { class: "contactFrom",    id: "contactForm"}, local: true do |form| %>
 
 
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6">
                                     <%= form.text_field :first_name, class: 'input-form required',  placeholder: "First Name" %>
 
-                                    <%# <input class="input-form required" type="text" name="f_name" id="f_name" placeholder="First Name"> %>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
-                                    <%# <input class="input-form required" type="text" name="l_name" id="l_name" placeholder="Last Name"> %>
                                     <%= form.text_field :last_name, class: 'input-form required',  placeholder: "Last Name" %>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
