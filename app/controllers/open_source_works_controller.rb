@@ -1,5 +1,7 @@
 class OpenSourceWorksController < ApplicationController
-  before_action :set_open_source_work, only: [:show, :edit, :update, :destroy]
+  before_action       :set_open_source_work, only: [:show, :edit, :update, :destroy]
+  before_action  :authenticate_user!, only: [:new, :edit, :update, :destroy, :create, :show]
+
 
   # GET /open_source_works
   # GET /open_source_works.json
