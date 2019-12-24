@@ -1,0 +1,61 @@
+<%= form_with(model: open_source_work, local: true) do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+<h3>contribtors</h3>
+  <%= f.collection_check_boxes :open_source_contributor_ids, OpenSourceContributor.all, :id, :first_name %> <br>
+  <span>Add Contributor</span><br>
+  <%= f.fields_for :open_source_contributors, open_source_work.open_source_contributors.build do |contributors_fields| %>
+    <span>First Name</span><%= contributors_fields.text_field :first_name %> <br>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+<hr>
+<%= form_with(model: open_source_work, local: true) do |form| %>
+  <% if open_source_work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(open_source_work.errors.count, "error") %> prohibited this open_source_work from being saved:</h2>
+
+      <ul>
+      <% open_source_work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :license_kind %>
+    <%= form.text_field :license_kind, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :license_text %>
+    <%= form.text_field :license_text, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if open_source_work.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', open_source_work, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if open_source_work.persisted? %>
+      <%= link_to "Cancel", open_source_work, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", open_source_works_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
