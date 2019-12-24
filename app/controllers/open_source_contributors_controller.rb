@@ -1,4 +1,5 @@
 class OpenSourceContributorsController < ApplicationController
+  before_action  :authenticate_user!
   before_action :set_open_source_contributor, only: [:show, :edit, :update, :destroy]
 
   # GET /open_source_contributors
