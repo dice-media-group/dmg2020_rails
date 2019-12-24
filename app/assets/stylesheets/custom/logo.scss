@@ -1,25 +1,26 @@
 .website-logo {
   background: white;
   background-image: image-url("Dice-5-b.svg");
+  vertical-align: sub;
 }
 .website-logo-1 {
   background: white;
-  background-image: image-url("Dice-5-b.svg");
+  background-image: image-url("Dice-1-b.svg");
 }
 
 .website-logo-2 {
   background: white;
-  background-image: image-url("Dice-5-b.svg");
+  background-image: image-url("Dice-2-b.svg");
 }
 
 .website-logo-3 {
   background: white;
-  background-image: image-url("Dice-5-b.svg");
+  background-image: image-url("Dice-3-b.svg");
 }
 
 .website-logo-4 {
   background: white;
-  background-image: image-url("Dice-5-b.svg");
+  background-image: image-url("Dice-4-b.svg");
 }
 
 .website-logo-5 {
@@ -29,7 +30,7 @@
 
 .website-logo-6 {
   background: white;
-  background-image: image-url("Dice-5-b.svg");
+  background-image: image-url("Dice-6-b.svg");
 }
 
 .logo a {
@@ -40,8 +41,20 @@
   background-position: center;
   background-size: contain;
   border-radius: 5px;
+  vertical-align: text-bottom;
 }
 
 .logo a:hover {
   color: transparent;
+}
+
+.logo-text {
+  font-size: 18px;
+  letter-spacing: 0.72px;
+  color: #fff;
+  line-height: 0.8;
+  margin: 0 0 43px;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #000, 0 0 4px #000;
 }
