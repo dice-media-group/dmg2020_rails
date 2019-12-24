@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :open_source_contributors
+  resources :open_source_works
+  resources :posts
   resources :messages
   namespace :admin do
     resources :messages

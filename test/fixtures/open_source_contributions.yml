@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open_source_contributor: one
+  open_source_work: one
+
+two:
+  open_source_contributor: two
+  open_source_work: two
