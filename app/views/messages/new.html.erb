@@ -11,31 +11,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-md-10 col-md-offset-1">
-                        <%# <form action="#" method="post" class="contactFrom" id="contactForm"> %>
-                        <%= form_with model: @message,  html: { class: "contactFrom",    id: "contactForm"}, local: true do |form| %>
-
-
-                            <div class="row">
-                                <div class="col-lg-6 col-sm-6">
-                                    <%= form.text_field :first_name, class: 'input-form required',  placeholder: "First Name" %>
-
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <%= form.text_field :last_name, class: 'input-form required',  placeholder: "Last Name" %>
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <%= form.text_field :email, class: 'input-form required',  placeholder: "Email Address" %>
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <%= form.text_field :phone_number, class: 'input-form required',  placeholder: "Phone Number" %>
-                                </div>
-                                <div class="col-lg-12 col-sm-12">
-                                    <%# <textarea class="input-form required" name="con_message" id="con_message" placeholder="Write Message"></textarea> %>
-                                    <%= form.text_area :body, class: 'input-form required',  placeholder: "How can we help?" %>
-                                </div>
-                            </div>
-                            <button class="common_btn red_bg" type="submit" id="con_submit"><span>Send Message</span></button>
-                        <% end %>
+                    <%= render 'form' %>
                     </div>
                 </div>
             </div>
