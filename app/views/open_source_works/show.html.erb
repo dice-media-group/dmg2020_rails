@@ -1,0 +1,30 @@
+<div class="page-header">
+  <%= link_to open_source_works_path, class: 'btn btn-default' do %>
+    All Open_source_works
+  <% end %>
+  <%= link_to edit_open_source_work_path(@open_source_work), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show open_source_work</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @open_source_work.title %></dd>
+
+  <dt>License kind:</dt>
+  <dd><%= @open_source_work.license_kind %></dd>
+
+  <dt>License text:</dt>
+  <dd><%= @open_source_work.license_text %></dd>
+
+  <dt>Url:</dt>
+  <dd><%= @open_source_work.url %></dd>
+
+  <dt>Contributors:</dt>
+  <dd><% @open_source_work.open_source_contributors.each do |contributor| %>
+        <%= contributor.first_name%> <br>
+      <% end %>
+  </dd>
+
+</dl>

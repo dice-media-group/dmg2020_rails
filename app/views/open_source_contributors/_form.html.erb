@@ -1,0 +1,54 @@
+<%= form_with(model: open_source_contributor, local: true) do |form| %>
+  <% if open_source_contributor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(open_source_contributor.errors.count, "error") %> prohibited this open_source_contributor from being saved:</h2>
+
+      <ul>
+      <% open_source_contributor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :gravatar_username %>
+    <%= form.text_field :gravatar_username, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if open_source_contributor.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', open_source_contributor, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if open_source_contributor.persisted? %>
+      <%= link_to "Cancel", open_source_contributor, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", open_source_contributors_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

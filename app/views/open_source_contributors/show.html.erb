@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to open_source_contributors_path, class: 'btn btn-default' do %>
+    All Open_source_contributors
+  <% end %>
+  <%= link_to edit_open_source_contributor_path(@open_source_contributor), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show open_source_contributor</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>First name:</dt>
+  <dd><%= @open_source_contributor.first_name %></dd>
+
+  <dt>Last name:</dt>
+  <dd><%= @open_source_contributor.last_name %></dd>
+
+  <dt>Url:</dt>
+  <dd><%= @open_source_contributor.url %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= @open_source_contributor.email %></dd>
+
+  <dt>Gravatar username:</dt>
+  <dd><%= @open_source_contributor.gravatar_username %></dd>
+
+</dl>
