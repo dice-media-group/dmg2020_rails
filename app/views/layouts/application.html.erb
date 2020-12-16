@@ -12,7 +12,6 @@
 
     <%if @page_banner.to_s.length > 0 %>
       <%= render :partial => @page_banner.to_s  %>
-      <%#= render :partial => @page_banner.to_s  %>
     <%else%>
       <%= render :partial => "shared/page_banner"  %>
     <% end %>
