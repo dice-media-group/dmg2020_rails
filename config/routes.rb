@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :blog_entries
   resources :open_source_contributors
   resources :open_source_works
   resources :posts
