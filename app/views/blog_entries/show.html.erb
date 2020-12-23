@@ -12,10 +12,11 @@
   <dt>Title:</dt>
   <dd><%= @blog_entry.title %></dd>
 
-  <dt>Publish at:</dt>
-  <dd><%= @blog_entry.publish_at %></dd>
+  <dt>Byline:</dt>
+  <dd><%= @blog_entry.author.name.full %></dd>
 
-  <dt>User:</dt>
-  <dd><%= @blog_entry.user %></dd>
+  <dt>body</dt>
+  <dd><%= @blog_entry.body.to_s %></dd>
+
 
 </dl>

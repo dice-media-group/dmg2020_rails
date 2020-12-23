@@ -2,10 +2,13 @@ class BlogEntriesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :edit, :update, :destroy, :new, :create]
   before_action :set_blog_entry, only: [:show, :edit, :update, :destroy]
 
+  layout 'backstage'
+
   # GET /blog_entries
   # GET /blog_entries.json
   def index
-    @blog_entries = current_user.blog_entries.all
+    # @blog_entries = current_user.blog_entries.all
+    @blog_entries = BlogEntry.all
   end
 
   # GET /blog_entries/1
@@ -83,6 +86,6 @@ class BlogEntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_entry_params
-      params.require(:blog_entry).permit(:title, :publish_at, :user_id)
+      params.require(:blog_entry).permit(:title, :publish_at, :user_id, :body)
     end
 end
