@@ -14,6 +14,17 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries/1
   # GET /blog_entries/1.json
   def show
+    if @blog_entry.published? == true
+          render layout: "application"
+    else
+      # set current_user to "guest" if no one is signed in
+      if user_signed_in?
+        render layout: "backstage"
+      else
+        redirect_to blog_path, notice: 'Whoops, that entry is not ready for prime time yet.'
+
+      end
+    end
   end
 
   # GET /blog_entries/new
@@ -88,4 +99,5 @@ class BlogEntriesController < ApplicationController
     def blog_entry_params
       params.require(:blog_entry).permit(:title, :publish_at, :user_id, :body)
     end
+
 end

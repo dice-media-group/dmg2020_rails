@@ -5,4 +5,8 @@ class BlogEntry < ApplicationRecord
   def author
     self.user
   end
+
+  def published?
+    self.publish_at < Time.now
+  end
 end
