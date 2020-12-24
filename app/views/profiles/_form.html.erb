@@ -24,6 +24,19 @@
     <%= link_to 'Upload Avatar', "#",  data: {behavior: 'uppy-trigger'} %>
   </div>
 
+  <div class="form-group" data-uppy="profile[banner]">
+    <%= form.label :banner %>
+    <div class="">
+    <% if @profile.banner.attached? %>
+      <%= image_tag @profile.banner, width: 280, data: { behavior: 'uppy-preview' } %>
+    <% else %>
+      <img src="" alt="" data-behavior="uppy-preview">
+    <% end %>
+    </div>
+
+    <%= link_to 'Upload Banner', "#",  data: {behavior: 'uppy-trigger'} %>
+  </div>
+
   <div class="form-group">
     <%= form.label :city %>
     <%= form.text_field :city, class: 'form-control' %>

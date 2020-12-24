@@ -1,25 +1,25 @@
 <style type="text/css">
     .responsive-header-img {
-        background-image: url(https://blog.cloudlayer.io/content/images/size/w2000/2020/11/blog-banner.jpg);
+        background-image: url('<%= rails_blob_url(@author.profile.banner) %>');
     }
 
     @media(max-width: 1000px) {
         .responsive-header-img {
-            background-image: url(https://blog.cloudlayer.io/content/images/size/w1000/2020/11/blog-banner.jpg);
-            background-image: -webkit-image-set(url(/content/images/size/w1000/2020/11/blog-banner.jpg) 1x,
-                url(/content/images/size/w2000/2020/11/blog-banner.jpg) 2x);
-            background-image: image-set(url(/content/images/size/w1000/2020/11/blog-banner.jpg) 1x,
-                url(/content/images/size/w2000/2020/11/blog-banner.jpg) 2x);
+            background-image: url('<%= rails_blob_url(@author.profile.banner) %>');
+            background-image: -webkit-image-set(url('<%= rails_blob_url(@author.profile.banner) %>') 1x,
+                url('<%= rails_blob_url(@author.profile.banner) %>') 2x);
+            background-image: image-set(url('<%= rails_blob_url(@author.profile.banner) %>') 1x,
+                url('<%= rails_blob_url(@author.profile.banner) %>') 2x);
         }
     }
 
     @media(max-width: 600px) {
         .responsive-header-img {
-            background-image: url(https://blog.cloudlayer.io/content/images/size/w600/2020/11/blog-banner.jpg);
-            background-image: -webkit-image-set(url(/content/images/size/w600/2020/11/blog-banner.jpg) 1x,
-                url(/content/images/size/w1000/2020/11/blog-banner.jpg) 2x);
-            background-image: image-set(url(/content/images/size/w600/2020/11/blog-banner.jpg) 1x,
-                url(/content/images/size/w1000/2020/11/blog-banner.jpg) 2x);
+            background-image: url('<%= rails_blob_url(@author.profile.banner) %>');
+            background-image: -webkit-image-set(url('<%= rails_blob_url(@author.profile.banner) %>') 1x,
+                url('<%= rails_blob_url(@author.profile.banner) %>') 2x);
+            background-image: image-set(url('<%= rails_blob_url(@author.profile.banner) %>') 1x,
+                url('<%= rails_blob_url(@author.profile.banner) %>') 2x);
         }
     }
 </style>
@@ -108,9 +108,8 @@
     <div class="outer site-header-background responsive-header-img">
       <div class="inner">
         <div class="site-header-content author-header">
-          <img alt="Brandon DeNino"
-               class="author-profile-image"
-               src="https://blog.cloudlayer.io/content/images/2020/11/IMG_2287.jpg">
+            <%= image_tag @author.profile.avatar, alt: @author.name.full, class:"author-profile-image" %>
+
           <div class="author-header-content">
             <h1 class="site-title"><%= @author.name.full %></h1>
             <div class="author-meta">

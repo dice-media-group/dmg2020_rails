@@ -28,10 +28,10 @@
 <dl>
   <dt>Banner:</dt>
   <dd>
-    <%# if @profile.banner.attached? %>
+    <% if @profile.banner.attached? %>
 
-      <%#= image_tag @profile.banner, width: 50vw %>
-    <%# end %>
+      <%= image_tag @profile.banner, width: 300 %>
+    <% end %>
     
   </dd>
 </dl>
