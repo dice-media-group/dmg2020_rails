@@ -1,0 +1,102 @@
+<style>
+.site-archive-header .no-image .author-header {
+    padding-bottom: 20px;
+}
+
+.author-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 0 0 30px;
+}
+
+.site-header-content .author-profile-image {
+    z-index: 10;
+    flex-shrink: 0;
+    margin: -4px 0 0;
+    width: 110px;
+    height: 110px;
+    box-shadow: rgba(255,255,255,0.1) 0 0 0 6px;
+}
+
+.author-header-content .author-bio {
+    z-index: 10;
+    flex-shrink: 0;
+    margin: 6px 0 0;
+    max-width: 46em;
+    font-size: 2.0rem;
+    line-height: 1.3em;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.author-header-content .author-meta {
+    z-index: 10;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 1px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.author-header-content .social-link:first-of-type {
+    padding-left: 4px;
+}
+
+.no-image .author-header-content .author-bio {
+    color: var(--midgrey);
+    opacity: 1.0;
+}
+</style>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Authors</h1>
+  </div>
+
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Avatar</th>
+            <th>Publish at</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @authors.each do |author| %>
+        <%= content_tag :tr, id: dom_id(author), class: dom_class(author) do %>
+          <% avatar = 'https://blog.cloudlayer.io/content/images/2020/11/IMG_2287.jpg' %>
+                      <td> <%= link_to author.name.full, author_path(author.id) %></td>
+                      <td>
+                            <div class="site-header-content author-header">
+                                <%= image_tag avatar, class: 'author-profile-image', alt: 'author.name.full' %>
+                                <div class="author-header-content">
+                                    <h1 class="site-title"><% author.name.full %> </h1>
+                                    <div class="author-meta">
+                                        <div class="author-location"><%= author.profile.city %>, <%= author.profile.state %></div><br />
+                                            <div class="author-stats">
+                                                <%= author.blog_entries.count%> posts
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      </td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

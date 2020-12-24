@@ -1,11 +1,14 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :profiles
   resources :blog_entries
   resources :open_source_contributors
   resources :open_source_works
   resources :posts
   resources :messages
+  resources :authors, only: [:index, :show]
+
   namespace :admin do
     resources :messages
     resources :users

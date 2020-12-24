@@ -7,4 +7,11 @@ class User < ApplicationRecord
 
   has_many :notifications, foreign_key: :recipient_id
   has_many :services
+
+  has_many :blog_entries
+  has_one  :profile, dependent: :destroy
+
+  def authors
+    authors = User.where("has_authorship = ?", true)
+  end
 end

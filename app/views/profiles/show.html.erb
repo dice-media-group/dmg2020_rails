@@ -1,0 +1,15 @@
+<div class="page-header">
+  <%= link_to edit_profile_path(@profile), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1><%= @profile.user.name.full %> </h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>City:</dt>
+  <dd><%= @profile.city %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @profile.state %></dd>
+
+</dl>
