@@ -13,3 +13,25 @@
   <dd><%= @profile.state %></dd>
 
 </dl>
+
+<dl>
+  <dt>Avatar:</dt>
+  <dd>
+    <% if @profile.avatar.attached? %>
+
+      <%= image_tag @profile.avatar, width: 280 %>
+    <% end %>
+    
+  </dd>
+</dl>
+
+<dl>
+  <dt>Banner:</dt>
+  <dd>
+    <%# if @profile.banner.attached? %>
+
+      <%#= image_tag @profile.banner, width: 50vw %>
+    <%# end %>
+    
+  </dd>
+</dl>
